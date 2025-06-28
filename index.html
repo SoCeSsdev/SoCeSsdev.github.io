@@ -1,37 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicksubz</title>
-    <link rel="icon" href="Favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickSubz</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div>
-        <nav>
-            <a href="index.html"><img src="logo.png" alt="logo" width="100px"></a>
-            <ul><li>Home</li>
-            <li>Services</li>
-            <li>Pricing</li>
-            <li>Whatsapp Channel</li>
-            <li>Login/ Register</li>
-            <li>Become a Reseller</li>
+
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header & Navigation -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-2">
+          <img src="logo.png" alt="QuickSubz Logo" class="w-24">
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="hidden md:flex space-x-6 font-medium text-sm">
+          <li><a href="#" class="text-gray-700 hover:text-blue-600">Home</a></li>
+          <li><a href="#services" class="text-gray-700 hover:text-blue-600">Services</a></li>
+          <li><a href="#pricing" class="text-gray-700 hover:text-blue-600">Pricing</a></li>
+          <li><a href="#whatsapp" class="text-gray-700 hover:text-blue-600">Whatsapp Channel</a></li>
+          <li><a href="#login" class="text-gray-700 hover:text-blue-600">Login / Register</a></li>
+          <li>
+            <a href="#reseller" class="bg-emerald-500 text-white px-4 py-2 rounded-xl hover:bg-emerald-600 transition">
+              Become a Reseller
+            </a>
+          </li>
         </ul>
-        </nav>
+      </nav>
     </div>
-    <div>
-        <h1>Welcome to QuickSubz</h1>
-        <h2>Fast, Reliable & Affordable Virtual Top-Up</h2>
-        <h3>Top up airtime, data, TV subscriptions, electricity & more — all in one place.</h3>
-        <button> Get Started</button>
-        <button>See Pricing</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 px-4 bg-white">
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to QuickSubz</h1>
+    <h2 class="text-2xl font-semibold mb-2">Fast, Reliable & Affordable Virtual Top-Up</h2>
+    <h3 class="text-lg text-gray-600 mb-6">
+      Top up airtime, data, TV subscriptions, electricity & more — all in one place.
+    </h3>
+    <div class="space-x-4">
+      <a href="#get-started"
+        class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition font-medium">
+        Get Started
+      </a>
+      <a href="#pricing"
+        class="bg-gray-200 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-300 transition font-medium">
+        See Pricing
+      </a>
     </div>
-    <div>
-        <h3>Our Services</h3>
-        <div>
-            
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-10">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+        <!-- Airtime -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="airtime-icon.svg" alt="Airtime" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Airtime Top-Up</h3>
+          <p class="text-gray-600 text-sm">Instant recharge to all networks in seconds.</p>
         </div>
-    </div>
-</body>
-</html>
+
+        <!-- Data -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="data-icon.svg" alt="Data" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Data Bundles</h3>
+          <p class="text-gray-600 text-sm">Affordable and fast data for MTN, Airtel, Glo, 9mobile.</p>
+        </div>
+
+        <!-- TV -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="tv-icon.svg" alt="TV" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Cable TV Subscription</h3>
+          <p class="text-gray-600 text-sm">Pay for DSTV, GOTV, and Startimes easily.</p>
+        </div>
+
+        <!-- Electricity -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="electricity-icon.svg" alt="Electricity" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Electricity Bills</h3>
+          <p class="text-gray-600 text-sm">Quick payments for all major electricity providers.</p>
+        </div>
+
+        <!-- Airtime to Cash -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="cash-icon.svg" alt="Airtime to Cash" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Airtime to Cash</h3>
+          <p class="text-gray-600 text-sm">Convert excess airtime into wallet balance or cash.</p>
+        </div>
+
+        <!-- Exam Pins -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="pin-icon.svg" alt="Exam PIN" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Exam PINs</h3>
+          <p class="text-gray-600 text-sm">Buy WAEC, NECO, and NABTEB e-PINs instantly.</p>
+        </div>
+
+        <!-- API Access -->
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
+          <img src="api-icon.svg" alt="API" class="w-12 mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">API Integration</h3>
+          <p class="text-gra
