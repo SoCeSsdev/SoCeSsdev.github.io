@@ -7,6 +7,16 @@
   <title>QuickSubz</title>
   <link rel="icon" href="logo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
 </head>
 
 <body class="bg-gray-100 text-gray-900">
@@ -20,23 +30,45 @@
           <img src="logo.png" alt="QuickSubz Logo" class="w-24">
         </a>
 
+        <!-- Hamburger Icon (Mobile) -->
+        <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
         <!-- Navigation Links -->
-        <ul class="hidden md:flex space-x-6 font-medium text-sm">
-          <li><a href="#" class="text-gray-700 hover:text-blue-600">Home</a></li>
-          <li><a href="#services" class="text-gray-700 hover:text-blue-600">Services</a></li>
-          <li><a href="#pricing" class="text-gray-700 hover:text-blue-600">Pricing</a></li>
-          <li><a href="#whatsapp" class="text-gray-700 hover:text-blue-600">Whatsapp Channel</a></li>
-          <li><a href="#login" class="text-gray-700 hover:text-blue-600">Login / Register</a></li>
-          <li>
-            <a href="#reseller" class="bg-emerald-500 text-white px-4 py-2 rounded-xl hover:bg-emerald-600 transition">
-              Become a Reseller
-            </a>
-          </li>
-        </ul>
+        <ul
+        id="menu"
+        class="hidden md:flex md:space-x-6 font-medium text-sm
+                absolute md:static top-16 md:top-auto left-1/2 md:left-auto transform md:transform-none -translate-x-1/2 md:translate-x-0
+                w-11/12 md:w-auto bg-white md:bg-transparent
+                shadow-md md:shadow-none flex-col md:flex-row
+                text-center md:text-left z-40 md:z-auto rounded-xl md:rounded-none"
+        >
+
+
+  <li><a href="#" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Home</a></li>
+  <li><a href="#services" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Services</a></li>
+  <li><a href="#pricing" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Pricing</a></li>
+  <li><a href="#whatsapp" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Whatsapp Channel</a></li>
+  <li><a href="#login" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Login / Register</a></li>
+  <li>
+    <a
+      href="#reseller"
+      class="block px-4 py-2 bg-emerald-500 text-white rounded-xl 
+             hover:bg-emerald-600 transition md:inline-block md:rounded-xl"
+    >
+      Become a Reseller
+    </a>
+  </li>
+</ul>
+
       </nav>
     </div>
   </header>
-
   <!-- Hero Section -->
   <section class="text-center py-16 px-4 bg-white">
     <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to QuickSubz</h1>
@@ -108,4 +140,130 @@
         <div class="bg-white p-6 rounded-2xl shadow hover:shadow-md transition">
           <img src="api-icon.svg" alt="API" class="w-12 mx-auto mb-4">
           <h3 class="text-xl font-semibold mb-2">API Integration</h3>
-          <p class="text-gra
+          <p class="text-gray-600 text-sm">Resellers can connect to our fast VTU API.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-16" id="why-choose-us">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose QuickSubz?</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+      At QuickSubz, we’re not just another VTU platform. We’re built to give you speed, savings, and simplicity — all in one dashboard.
+    </p>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Feature 1 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="lightning-icon.svg" alt="Instant Delivery" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Instant Delivery</h3>
+        <p class="text-gray-600 text-sm">Recharge and payments are processed within seconds — no delays.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="shield-icon.svg" alt="Secure Transactions" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Secure Transactions</h3>
+        <p class="text-gray-600 text-sm">Bank-level security ensures your money and data are always protected.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="cashback-icon.svg" alt="Cashback" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Best Prices & Cashback</h3>
+        <p class="text-gray-600 text-sm">Enjoy discounted rates and earn cashback on every top-up.</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="support-icon.svg" alt="Support" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Reliable Support</h3>
+        <p class="text-gray-600 text-sm">Get fast, friendly help from our support team anytime you need it.</p>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="dashboard-icon.svg" alt="Dashboard" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Reseller-Friendly Dashboard</h3>
+        <p class="text-gray-600 text-sm">Manage users, track earnings, and monitor transactions easily.</p>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="p-6 bg-gray-50 rounded-2xl shadow hover:shadow-md transition">
+        <img src="api-icon.svg" alt="API" class="w-10 h-10 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Fast API Access</h3>
+        <p class="text-gray-600 text-sm">Integrate with your own platform and start reselling in minutes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="bg-gray-900 text-gray-200 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+    <!-- Brand & About -->
+    <div>
+      <img src="logo.png" alt="QuickSubz Logo" class="w-28 mb-4">
+      <p class="text-sm text-gray-400">
+        QuickSubz offers fast, secure, and affordable virtual top-up services — powering your airtime, data, and utility needs in one place.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white">Home</a></li>
+        <li><a href="#services" class="hover:text-white">Services</a></li>
+        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+        <li><a href="#reseller" class="hover:text-white">Become a Reseller</a></li>
+        <li><a href="#login" class="hover:text-white">Login / Register</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Support</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#faq" class="hover:text-white">FAQs</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact Us</a></li>
+        <li><a href="#whatsapp" class="hover:text-white">WhatsApp Support</a></li>
+        <li><a href="#api" class="hover:text-white">API Access</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Contact -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+      <div class="flex space-x-4 mb-4">
+        <a href="#" class="hover:text-white"><img src="facebook-icon.svg" alt="Facebook" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white"><img src="twitter-icon.svg" alt="Twitter" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white"><img src="instagram-icon.svg" alt="Instagram" class="w-6 h-6"></a>
+        <a href="#" class="hover:text-white"><img src="whatsapp-icon.svg" alt="WhatsApp" class="w-6 h-6"></a>
+      </div>
+      <p class="text-sm text-gray-400">Email: support@quicksubz.com</p>
+      <p class="text-sm text-gray-400">Phone: +234 000 000 0000</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+    &copy; <span id="year"></span> QuickSubz. All rights reserved.
+  </div>
+
+  <!-- Year Auto Update -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
+</body>
+
+</html>
+
