@@ -1,0 +1,80 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 5 Reasons to Use KratoSubz for Airtime, Data & Utility Recharge</title>
+  <meta name="description" content="Discover why KratoSubz is Nigeria’s most trusted platform for affordable airtime, data top-up, electricity payments, and more. Learn about our speed, security, prices, and reseller program.">
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 bg-white shadow-md mt-10 rounded-lg">
+    <article>
+      <h1 class="text-4xl font-bold text-blue-600 mb-4">Top 5 Reasons to Use KratoSubz for Airtime, Data & Utility Recharge</h1>
+      <p class="text-gray-600 mb-8">Published on <time datetime="2025-06-30">June 30, 2025</time> by KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="How to start VTU business in Nigeria" class="rounded-lg mb-6 w-full">
+
+      <p class="text-lg text-gray-700 mb-6">
+        Looking for the best virtual top-up platform in Nigeria? Whether you're recharging airtime, buying data bundles, subscribing to cable TV, or paying electricity bills, <strong>KratoSubz</strong> stands out as the top choice for thousands of users nationwide.
+      </p>
+
+      <p class="mb-6 text-gray-700">
+        In this blog post, we break down the top 5 reasons why KratoSubz is your go-to recharge platform for affordability, speed, security, and convenience.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">1. Super-Fast Recharge Speed</h2>
+      <p class="mb-5 text-gray-700">
+        Time is critical when recharging your phone or data. With <strong>KratoSubz</strong>, you enjoy lightning-fast recharge speed — most transactions are completed within seconds. This ensures you’re never disconnected when it matters most.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">2. Competitive Pricing with Cashback Rewards</h2>
+      <p class="mb-5 text-gray-700">
+        KratoSubz is built to save you money. From airtime and data to electricity and exam pins, our platform offers discounted rates on every transaction. Plus, you earn <strong>cashback on every purchase</strong>, making it a smart financial choice for frequent users.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">3. Bank-Level Security & Privacy</h2>
+      <p class="mb-5 text-gray-700">
+        Your security is our top priority. KratoSubz uses <strong>end-to-end encryption and secure payment gateways</strong> to keep your information safe. Whether you're funding your wallet or processing a transaction, you can trust that your data is protected.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">4. All-in-One Recharge Platform</h2>
+      <p class="mb-5 text-gray-700">
+        No more switching between different apps. KratoSubz allows you to <strong>top-up airtime, buy data bundles, pay electricity bills, subscribe to DSTV/GOTV/Startimes, and even convert airtime to cash</strong> — all from one user-friendly dashboard.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-gray-800 mb-3">5. Powerful Reseller Program with API Access</h2>
+      <p class="mb-5 text-gray-700">
+        Want to start earning as a VTU reseller? KratoSubz gives you access to a powerful backend dashboard and API integration. With competitive commissions, real-time analytics, and wallet management tools, resellers can grow their business seamlessly.
+      </p>
+
+      <h3 class="text-xl font-semibold mt-10 text-blue-600">Why More Nigerians Are Switching to KratoSubz</h3>
+      <p class="mt-4 mb-6 text-gray-700">
+        With many satisfied users growing daily, KratoSubz is rapidly becoming the preferred choice for digital recharges in Nigeria. Whether you're a student, business owner, or household user, we give you more value and more control — all at your fingertips.
+      </p>
+
+      <div class="mt-10 text-center">
+        <a href="{% url 'register' %}" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+          Get Started with KratoSubz Today
+        </a>
+      </div>
+    </article>
+  </main>
+</body>
+
+</html>

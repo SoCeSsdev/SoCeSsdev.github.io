@@ -1,11 +1,12 @@
+ {% load static %}
  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How to Start a VTU Business in Nigeria (2025 Guide) | QuickSubz Blog</title>
+  <title>How to Start a VTU Business in Nigeria (2025 Guide) | KratoSubz Blog</title>
   <meta name="description" content="Learn step-by-step how to start a successful VTU (Virtual Top-Up) business in Nigeria in 2025. Discover tools, platforms, strategies and profit tips."/>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 leading-relaxed">
@@ -13,11 +14,11 @@
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold text-blue-600">QuickSubz Blog</a>
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
       <nav>
-        <a href="index.html" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
         <span class="mx-2 text-gray-400">|</span>
-        <a href="blog.html" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
       </nav>
     </div>
   </header>
@@ -25,9 +26,9 @@
   <!-- Blog Content -->
   <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
     <h1 class="text-4xl font-bold text-gray-900 mb-4">How to Start a VTU Business in Nigeria (2025 Guide)</h1>
-    <p class="text-sm text-gray-500 mb-6">Published on <time datetime="2025-06-28">June 28, 2025</time> by QuickSubz Team</p>
+    <p class="text-sm text-gray-500 mb-6">Published on <time datetime="2025-06-28">June 28, 2025</time> by KratoSubz Team</p>
 
-    <img src="vtu.png" alt="How to start VTU business in Nigeria" class="rounded-lg mb-6 w-full">
+    <img src="{% static 'images/vtu.png' %}" alt="How to start VTU business in Nigeria" class="rounded-lg mb-6 w-full">
 
     <p class="mb-4">
       The Virtual Top-Up (VTU) business in Nigeria is one of the most lucrative and accessible small businesses today. With a smartphone, internet connection, and the right tools, you can start selling airtime, data, electricity tokens, cable TV subscriptions, and more — all from your device.
@@ -50,7 +51,7 @@
 
     <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">1. Choose a VTU Platform</h3>
     <p class="mb-4">
-      Look for a reliable VTU platform like <strong>QuickSubz</strong> that offers competitive rates, a user-friendly dashboard, instant delivery, and great support.
+      Look for a reliable VTU platform like <strong>KratoSubz</strong> that offers competitive rates, a user-friendly dashboard, instant delivery, and great support.
     </p>
 
     <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">2. Register as a Reseller</h3>
@@ -83,17 +84,17 @@
 
     <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Final Thoughts</h2>
     <p class="mb-4">
-      VTU is not just a hustle — it’s a real business with growth potential. Whether you're a student, entrepreneur, or job seeker, QuickSubz gives you all you need to start and succeed in 2025.
+      VTU is not just a hustle — it’s a real business with growth potential. Whether you're a student, entrepreneur, or job seeker, KratoSubz gives you all you need to start and succeed in 2025.
     </p>
 
     <div class="mt-8 border-t pt-6 text-sm text-gray-500">
-      Want to get started? <a href="register.html" class="text-blue-600 hover:underline">Register now on QuickSubz</a> and become a VTU reseller today!
+      Want to get started? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Register now on KratoSubz</a> and become a VTU reseller today!
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
-    <p>&copy; <span id="year"></span> QuickSubz. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
 

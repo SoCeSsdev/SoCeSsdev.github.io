@@ -1,23 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickSubz | Login</title>
+  <title>KratoSubz | Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
   <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
     <div class="text-center mb-6">
-      <img src="logo.png" alt="QuickSubz Logo" class="w-20 mx-auto mb-4">
+      <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz Logo" class="w-20 mx-auto mb-4">
       <h1 class="text-2xl font-bold text-gray-800">Welcome Back</h1>
-      <p class="text-gray-500 text-sm">Login to your QuickSubz account</p>
+      <p class="text-gray-500 text-sm">Login to your KratoSubz account</p>
     </div>
 
-    <form action="#" method="POST" class="space-y-4">
+    <form action="{% url 'dashboard' %}" method="POST" class="space-y-4">
+      {% csrf_token %}
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
         <input type="email" id="email" name="email" required
@@ -34,7 +36,7 @@
         <label class="flex items-center text-sm">
           <input type="checkbox" class="mr-2"> Remember me
         </label>
-        <a href="#" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+        <a href="{% url 'forgot_password' %}" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
       </div>
 
       <button type="submit"
@@ -43,7 +45,7 @@
 
     <p class="text-center text-sm text-gray-600 mt-6">
       Don't have an account?
-      <a href="register.html" class="text-blue-600 hover:underline">Register</a>
+      <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Register</a>
     </p>
   </div>
 </body>

@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickSubz</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <title>KratoSubz</title>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -27,8 +28,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <a href="index.html" class="flex items-center space-x-2">
-          <img src="logo.png" alt="QuickSubz Logo" class="w-24">
+        <a href="{% url 'index' %}" class="flex items-center space-x-2">
+          <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz logo" class="w-24">
         </a>
 
         <!-- Hamburger Icon (Mobile) -->
@@ -51,14 +52,14 @@
         >
 
 
-  <li><a href="index.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Home</a></li>
-  <li><a href="login.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Login</a></li>
-  <li><a href="blog.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Blog</a></li>
+  <li><a href="{% url 'home' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Home</a></li>
+  <li><a href="{% url 'login' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Login</a></li>
+  <li><a href="{% url 'blog' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-600">Blog</a></li>
   <li><a href="https://whatsapp.com/channel/0029Vb1JXRB3AzNbH5wpLJ0t" class="block px-4 py-2 text-gray-700 hover:text-blue-600"><i class="fa-brands fa-whatsapp"></i> Whatsapp Channel</a></li>
-  <li><a href="#about_us.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600">About Us</a></li>
+  <li><a href="{% url 'about_us' %}" class="block px-4 py-2 text-gray-700 hover:text-blue-600">About Us</a></li>
   <li>
     <a
-      href="reseller.html"
+      href="{% url 'reseller' %}"
       class="block px-4 py-2 bg-emerald-500 text-white rounded-xl 
              hover:bg-emerald-600 transition md:inline-block md:rounded-xl"
     >
@@ -72,17 +73,17 @@
   </header>
   <!-- Hero Section -->
   <section class="text-center py-16 px-4 bg-white">
-    <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to QuickSubz</h1>
+    <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to KratoSubz</h1>
     <h2 class="text-2xl font-semibold mb-2">Fast, Reliable & Affordable Virtual Top-Up</h2>
     <h3 class="text-lg text-gray-600 mb-6">
       Top up airtime, data, TV subscriptions, electricity & more — all in one place.
     </h3>
     <div class="space-x-4">
-      <a href="register.html"
+      <a href="{% url 'register' %}"
         class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition font-medium">
         Get Started
       </a>
-      <a href="login.html"
+      <a href="{% url 'login' %}"
         class="bg-gray-200 text-gray-900 px-6 py-3 rounded-full hover:bg-gray-300 transition font-medium">
         Login
       </a>
@@ -150,9 +151,9 @@
   <section class="bg-white py-16" id="why-choose-us">
   <div class="max-w-7xl mx-auto px-4 text-center">
     <!-- Heading -->
-    <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose QuickSubz?</h2>
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose KratoSubz?</h2>
     <p class="text-gray-600 max-w-2xl mx-auto mb-12">
-      At QuickSubz, we’re not just another VTU platform. We’re built to give you speed, savings, and simplicity — all in one dashboard.
+      At KratoSubz, we’re not just another VTU platform. We’re built to give you speed, savings, and simplicity — all in one dashboard.
     </p>
 
     <!-- Grid -->
@@ -208,9 +209,9 @@
 
     <!-- Brand & About -->
     <div>
-      <img src="logo.png" alt="QuickSubz Logo" class="w-28 mb-4">
+      <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz Logo" class="w-28 mb-4">
       <p class="text-sm text-gray-400">
-        QuickSubz offers fast, secure, and affordable virtual top-up services — powering your airtime, data, and utility needs in one place.
+        KratoSubz offers fast, secure, and affordable virtual top-up services — powering your airtime, data, and utility needs in one place.
       </p>
     </div>
 
@@ -218,18 +219,18 @@
     <div>
       <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="index.html" class="hover:text-white">Home</a></li>
-        <li><a href="login.html" class="hover:text-white">Login</a></li>
-        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
+        <li><a href="{% url 'home' %}" class="hover:text-white">Home</a></li>
+        <li><a href="{% url 'login' %}" class="hover:text-white">Login</a></li>
+        <li><a href="{% url 'blog' %}" class="hover:text-white">Blog</a></li>
         <li><a href="https://whatsapp.com/channel/0029Vb1JXRB3AzNbH5wpLJ0t" class="hover:text-white"><i class="fa-brands fa-whatsapp"></i>  Whatsapp Channel</a></li>
-        <li><a href="reseller.html" class="hover:text-white">Become a Reseller</a></li>
+        <li><a href="{% url 'reseller' %}" class="hover:text-white">Become a Reseller</a></li>
       </ul>
     </div>
 
     <!-- Social & Contact -->
     <div>
       <h3 class="text-lg font-semibold mb-4">Connect With Us:</h3>
-      <p class="text-sm text-gray-400">Email: support@quicksubz.com</p>
+      <p class="text-sm text-gray-400">Email: support@kratosubz.com</p>
       <p class="text-sm text-gray-400">Phone: +234 912 951 5758</p>
     </div>
 
@@ -237,7 +238,7 @@
 
   <!-- Bottom Bar -->
   <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-    &copy; <span id="year"></span> QuickSubz. All rights reserved.
+    &copy; <span id="year"></span> KratoSubz. All rights reserved.
   </div>
 
   <!-- Year Auto Update -->
