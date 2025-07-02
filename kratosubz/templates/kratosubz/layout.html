@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Default Title{% endblock %}</title>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
+<script src="https://kit.fontawesome.com/87a05770e5.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+    {% block content %}
+    {% endblock %}
+
+<footer class="bg-gray-900 text-gray-200 py-12">
+  <!-- Bottom Bar -->
+  <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+    &copy; <span id="year"></span> KratoSubz. All rights reserved.
+  </div>
+
+  <!-- Year Auto Update -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
+</body>
+
+</html>
+

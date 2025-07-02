@@ -1,1 +1,109 @@
- 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Pay Electricity Bills Without Stress | KratoSubz Blog</title>
+  <meta name="description" content="Learn how to pay your PHCN prepaid and postpaid electricity bills online with ease using KratoSubz. Fast, secure, and stress-free payments anytime."/>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">How to Pay Electricity Bills Without Stress</h1>
+    <p class="text-sm text-gray-500 mb-6">By KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="Pay Electricity Bills Online" class="rounded-lg mb-6 w-full">
+
+    <p class="mb-4">
+      Gone are the days of queuing at PHCN offices or struggling to find vendors to pay your electricity bill. With <strong>KratoSubz</strong>, you can now pay for prepaid and postpaid electricity services online — fast, easy, and stress-free.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Why Pay Your Electricity Bills Online?</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Instant delivery of prepaid tokens</li>
+      <li>Secure payment process</li>
+      <li>Available 24/7 – even on weekends</li>
+      <li>No more queues or bank visits</li>
+      <li>Supports all major electricity distribution companies (DisCos) in Nigeria</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Supported Electricity Providers</h2>
+    <p class="mb-4">
+      KratoSubz supports both prepaid and postpaid services for major DisCos including:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li>IKEDC (Ikeja Electric)</li>
+      <li>EKEDC (Eko Electric)</li>
+      <li>BEDC (Benin Disco)</li>
+      <li>PHEDC (Port Harcourt)</li>
+      <li>KEDCO, JED, AEDC, and more</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">How to Pay Your Electricity Bill on KratoSubz</h2>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">1. Log in to Your Account</h3>
+    <p class="mb-4">
+      Go to <a href="{% url 'login' %}" class="text-blue-600 hover:underline">KratoSubz login</a> and access your dashboard. New user? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Sign up here</a>.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">2. Fund Your Wallet</h3>
+    <p class="mb-4">
+      Use bank transfer or debit card to top up your wallet balance. This is the amount used to make utility payments.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">3. Choose “Electricity Bill”</h3>
+    <p class="mb-4">
+      On your dashboard, select the <strong>Electricity</strong> option. Choose your DisCo, then select either Prepaid or Postpaid.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">4. Enter Meter Details</h3>
+    <p class="mb-4">
+      Input your meter number, name, phone number, and amount to be paid. Ensure your details are accurate to avoid errors.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">5. Confirm and Pay</h3>
+    <p class="mb-4">
+      Review your payment summary and confirm. You’ll receive your prepaid token or postpaid confirmation immediately.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Helpful Tips</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>For prepaid meters, ensure your meter is active and not tampered with</li>
+      <li>Always cross-check meter number before submitting payment</li>
+      <li>Use your dashboard to download receipts for proof</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Final Thoughts</h2>
+    <p class="mb-4">
+      Whether you’re at home, at work, or on the go, paying electricity bills doesn’t have to be stressful. KratoSubz brings you a smarter way to stay powered up — with no queues, no delays, and no worries.
+    </p>
+
+    <div class="mt-8 border-t pt-6 text-sm text-gray-500">
+      Ready to try it out? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Create your free KratoSubz account</a> today and experience hassle-free electricity bill payments.
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

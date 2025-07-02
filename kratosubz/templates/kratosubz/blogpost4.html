@@ -1,1 +1,98 @@
- 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding VTU and How It Works | KratoSubz Blog</title>
+  <meta name="description" content="Learn what VTU (Virtual Top-Up) is, how it works in Nigeria, and how you can leverage it to earn money selling airtime, data, and other digital services."/>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Understanding VTU and How It Works</h1>
+    <p class="text-sm text-gray-500 mb-6">By KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="Understanding Virtual Top-Up in Nigeria" class="rounded-lg mb-6 w-full">
+
+    <p class="mb-4">
+      Virtual Top-Up (VTU) is changing the way Nigerians access and pay for essential services like airtime, data, electricity, and TV subscriptions. Instead of buying physical recharge cards or visiting shops, VTU allows customers to top up directly from digital platforms — fast, easy, and secure.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">What is VTU?</h2>
+    <p class="mb-4">
+      VTU stands for <strong>Virtual Top-Up</strong>. It refers to the online recharge or payment of services such as mobile airtime, internet data, electricity bills, and cable TV. This is done through digital platforms using a wallet or payment gateway, without needing physical cards or PINs.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">How Does VTU Work?</h2>
+    <p class="mb-4">
+      VTU platforms like <strong>KratoSubz</strong> integrate directly with service providers (MTN, Airtel, Glo, PHCN, etc.) via APIs. When a user initiates a recharge or payment, the platform instantly communicates with the provider to deliver the service to the customer’s phone number or meter.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">1. User Funds Wallet</h3>
+    <p class="mb-4">
+      First, the user (or reseller) funds their wallet via bank transfer or online payment. This wallet is used for all transactions on the platform.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">2. User Initiates Recharge or Payment</h3>
+    <p class="mb-4">
+      The user selects the service (e.g., MTN Airtime ₦1000) and enters the recipient’s phone number or meter number. The amount is deducted from their wallet.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">3. Instant Delivery</h3>
+    <p class="mb-4">
+      The request is processed in seconds. The airtime, data, or utility token is delivered to the customer immediately without delay.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Who Can Use VTU?</h2>
+    <p class="mb-4">
+      VTU is for everyone! Whether you're:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li>A reseller looking to earn commissions</li>
+      <li>An individual topping up your own phone or utilities</li>
+      <li>A business managing multiple lines or prepaid meters</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Benefits of Using VTU</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>No need for scratch cards or physical vouchers</li>
+      <li>24/7 access to top-up services</li>
+      <li>Discounted rates for resellers</li>
+      <li>Transaction history for better tracking</li>
+      <li>Convenience — do it from your phone anywhere</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">KratoSubz: The Smart VTU Choice</h2>
+    <p class="mb-4">
+      At KratoSubz, we make VTU simple, secure, and profitable. Whether you want to earn as a reseller or just need a reliable way to recharge your essentials, our platform gives you access to fast delivery, great pricing, and helpful support.
+    </p>
+
+    <div class="mt-8 border-t pt-6 text-sm text-gray-500">
+      Interested in becoming a reseller? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Join KratoSubz today</a> and start making money from VTU!
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

@@ -1,1 +1,107 @@
- 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How to Recharge Cable TV Online Easily | KratoSubz Blog</title>
+  <meta name="description" content="Step-by-step guide on how to recharge your DSTV, GOTV, or Startimes subscription online using KratoSubz. Fast, secure and stress-free TV payment method."/>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">How to Recharge Cable TV Online Easily</h1>
+    <p class="text-sm text-gray-500 mb-6">By KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="Recharge Cable TV Online Easily" class="rounded-lg mb-6 w-full">
+
+    <p class="mb-4">
+      Recharging your cable TV subscription no longer requires visiting an outlet or waiting in line. With platforms like <strong>KratoSubz</strong>, you can renew your DSTV, GOTV, or Startimes subscription online in just a few clicks — anytime, anywhere.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Supported Cable TV Services</h2>
+    <p class="mb-4">
+      KratoSubz makes it easy to recharge the most popular cable TV services in Nigeria:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li><strong>DSTV</strong>: All bouquets including Padi, Yanga, Confam, and Premium</li>
+      <li><strong>GOTV</strong>: Jolli, Max, Supa and Smallie packages</li>
+      <li><strong>Startimes</strong>: Nova, Basic, Classic and more</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Why Use KratoSubz for Cable TV Recharge?</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Fast and reliable service delivery</li>
+      <li>Instant activation after payment</li>
+      <li>24/7 availability</li>
+      <li>Secure platform with multiple payment options</li>
+      <li>Earn cashback and enjoy reseller discounts</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">How to Recharge Your TV Subscription Online</h2>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">1. Log In to Your Account</h3>
+    <p class="mb-4">
+      Visit <a href="{% url 'login' %}" class="text-blue-600 hover:underline">KratoSubz login</a> and enter your credentials. If you're new, <a href="{% url 'register' %}" class="text-blue-600 hover:underline">create an account</a> in seconds.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">2. Fund Your Wallet</h3>
+    <p class="mb-4">
+      Add money to your KratoSubz wallet using your preferred payment method — bank transfer, debit card, or USSD.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">3. Navigate to Cable TV</h3>
+    <p class="mb-4">
+      On your dashboard, click on <strong>“Cable TV”</strong> and choose the service provider you want to recharge (DSTV, GOTV, or Startimes).
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">4. Enter Smartcard or IUC Number</h3>
+    <p class="mb-4">
+      Input the smartcard/IUC number associated with your decoder, then select your desired bouquet or plan.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-800 mt-6 mb-1">5. Confirm & Pay</h3>
+    <p class="mb-4">
+      Review the information and click pay. Your subscription will be activated instantly once payment is completed.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Helpful Tips</h2>
+    <ul class="list-disc list-inside mb-4">
+      <li>Ensure your decoder is turned on during recharge</li>
+      <li>Double-check your IUC/Smartcard number before payment</li>
+      <li>Use the transaction history to track previous recharges</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Final Thoughts</h2>
+    <p class="mb-4">
+      Online TV recharge through KratoSubz is fast, secure, and effortless. Whether you’re recharging your personal decoder or helping others as a reseller, our platform ensures smooth transactions and instant activation.
+    </p>
+
+    <div class="mt-8 border-t pt-6 text-sm text-gray-500">
+      Ready to recharge? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Create a free account on KratoSubz</a> and enjoy seamless cable TV subscriptions today.
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

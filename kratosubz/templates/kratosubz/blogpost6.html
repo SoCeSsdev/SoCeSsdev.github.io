@@ -1,1 +1,100 @@
- 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top Questions About Buying Exam PINs in Nigeria | KratoSubz Blog</title>
+  <meta name="description" content="Get answers to the most common questions about buying WAEC, NECO, and JAMB exam PINs online using KratoSubz. Safe, reliable, and instant delivery."/>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Top Questions About Buying Exam PINs</h1>
+    <p class="text-sm text-gray-500 mb-6">By KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="Buying Exam PINs Online in Nigeria" class="rounded-lg mb-6 w-full">
+
+    <p class="mb-4">
+      Buying exam PINs online in Nigeria has never been easier. With platforms like <strong>KratoSubz</strong>, students and resellers can now purchase exam access codes for WAEC, NECO, JAMB, and more in just a few clicks. But many people still have questions about how it works. In this guide, we’ll answer the most frequently asked questions about buying exam PINs.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">1. What is an Exam PIN?</h2>
+    <p class="mb-4">
+      An exam PIN is a unique digital code that grants access to register or check results for standardized examinations such as WAEC, NECO, NABTEB, and JAMB. These PINs are often required during online registration or result checking.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">2. Which Exam PINs Can I Buy on KratoSubz?</h2>
+    <p class="mb-4">
+      On KratoSubz, you can purchase:
+    </p>
+    <ul class="list-disc list-inside mb-4">
+      <li>WAEC Result Checker PIN</li>
+      <li>NECO Result Checker PIN</li>
+      <li>NABTEB Result PIN</li>
+      <li>JAMB e-PIN (UTME and DE Registration)</li>
+      <li>JAMB Result Checker PIN</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">3. Is It Safe to Buy PINs Online?</h2>
+    <p class="mb-4">
+      Yes, KratoSubz uses a secure payment system and real-time PIN delivery to ensure your transactions are fast and protected. Your PIN is displayed instantly after purchase and also sent to your dashboard or email.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">4. How Do I Buy an Exam PIN?</h2>
+    <ol class="list-decimal list-inside mb-4">
+      <li>Log in to your <a href="{% url 'login' %}" class="text-blue-600 hover:underline">KratoSubz account</a></li>
+      <li>Go to the "Exam PINs" section</li>
+      <li>Select the exam type and quantity</li>
+      <li>Make payment using your wallet</li>
+      <li>Receive your PIN instantly</li>
+    </ol>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">5. Can I Resell Exam PINs?</h2>
+    <p class="mb-4">
+      Absolutely! KratoSubz offers reseller access to those who want to make money by reselling exam PINs to students, schools, and centers. You get discounted rates and earn profits per sale.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">6. What If I Don’t Get My PIN?</h2>
+    <p class="mb-4">
+      If for any reason you don’t receive your PIN instantly (which is rare), your transaction is logged, and our support team is available 24/7 to assist. You can also view past PINs in your transaction history.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">7. Is There a Limit to How Many I Can Buy?</h2>
+    <p class="mb-4">
+      No limit. You can buy as many exam PINs as your wallet balance allows. This is ideal for school agents or cyber café owners handling bulk registrations.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Final Thoughts</h2>
+    <p class="mb-4">
+      Buying exam PINs online is quick, safe, and profitable when done through a trusted platform like KratoSubz. Whether you're a student, a parent, or a reseller, we make it easy to get the PINs you need — instantly.
+    </p>
+
+    <div class="mt-8 border-t pt-6 text-sm text-gray-500">
+      Ready to buy or resell exam PINs? <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Sign up on KratoSubz</a> today and get started.
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

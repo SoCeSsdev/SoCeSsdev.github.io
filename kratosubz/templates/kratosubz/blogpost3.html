@@ -1,1 +1,84 @@
- 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Benefits of Becoming a KratoSubz Reseller | KratoSubz Blog</title>
+  <meta name="description" content="Explore the major benefits of becoming a KratoSubz VTU reseller. Learn how to earn money, grow your network, and enjoy discounted services across Nigeria."/>
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{% url 'blog' %}" class="text-xl font-bold text-blue-600">KratoSubz Blog</a>
+      <nav>
+        <a href="{% url 'index' %}" class="text-sm text-gray-600 hover:text-blue-600">Home</a>
+        <span class="mx-2 text-gray-400">|</span>
+        <a href="{% url 'blog' %}" class="text-sm text-gray-600 hover:text-blue-600">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 bg-white mt-6 rounded-lg shadow-sm">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Benefits of Becoming a KratoSubz Reseller</h1>
+    <p class="text-sm text-gray-500 mb-6">By KratoSubz Team</p>
+
+    <img src="{% static 'images/vtu.png' %}" alt="KratoSubz VTU Reseller Benefits" class="rounded-lg mb-6 w-full">
+
+    <p class="mb-4">
+      The Virtual Top-Up (VTU) industry in Nigeria is booming, and becoming a KratoSubz reseller gives you an edge in this fast-growing digital business. Whether you're a student, an entrepreneur, or simply looking for extra income, KratoSubz equips you with the tools you need to start earning from digital services like airtime, data, electricity tokens, and more.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">1. Earn Passive Income with Every Transaction</h2>
+    <p class="mb-4">
+      As a KratoSubz reseller, you earn a commission on every service you sell — from airtime top-ups to data bundles and cable TV subscriptions. The more you sell, the more you earn. With Nigerians topping up daily, there’s always opportunity to profit.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">2. Access Discounted Prices</h2>
+    <p class="mb-4">
+      KratoSubz offers one of the most competitive VTU pricing models in Nigeria. As a reseller, you buy at discounted rates and sell at your own price — keeping the profit margin. This makes it easy to stay competitive and build a loyal customer base.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">3. Zero Technical Skills Required</h2>
+    <p class="mb-4">
+      You don’t need to be a tech expert. Our user-friendly dashboard lets you manage all your VTU services in one place. Whether you’re funding wallets, selling to customers, or tracking commissions, it’s all just a few clicks away.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">4. Flexibility to Work From Anywhere</h2>
+    <p class="mb-4">
+      All you need is a smartphone and internet connection. With KratoSubz, you can run your reseller business from your home, office, school, or even while traveling. It’s ideal for full-time and part-time hustlers.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">5. Build Your Own Brand</h2>
+    <p class="mb-4">
+      Want to take things further? With API access and white-label solutions, KratoSubz lets you build and brand your own VTU platform. You can resell services under your business name and attract even more customers.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">6. Exceptional Support & Training</h2>
+    <p class="mb-4">
+      Our team is available to assist you with any questions or issues you face. Plus, we offer free training materials to help you grow your business, understand pricing models, and master digital sales strategies.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-700 mt-8 mb-2">Final Thoughts</h2>
+    <p class="mb-4">
+      Becoming a KratoSubz reseller opens the door to a stable and scalable income stream. With trusted services, a reliable platform, and full business support, there's no better time to join Nigeria's VTU revolution than now.
+    </p>
+
+    <div class="mt-8 border-t pt-6 text-sm text-gray-500">
+      Ready to start earning today? <a href="{% url 'reseller' %}" class="text-blue-600 hover:underline">Register as a KratoSubz reseller</a> and take control of your digital business future!
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+    <p>&copy; <span id="year"></span> KratoSubz. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>

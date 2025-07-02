@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | KratoSubz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
 </head>
 
 <body class="bg-gray-100 text-gray-800">
   <!-- About Header -->
   <header class="bg-white shadow py-8 mb-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <img src="logo.png" alt="KratoSubz Logo" class="w-24 mx-auto mb-4">
+      <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz Logo" class="w-24 mx-auto mb-4">
       <h1 class="text-4xl font-bold text-blue-600">About KratoSubz</h1>
       <p class="mt-2 text-gray-600">Learn more about our vision, mission, and commitment to excellence.</p>
     </div>

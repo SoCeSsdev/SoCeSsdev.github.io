@@ -1,26 +1,8 @@
+{% extends 'kratosubz/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}KratoSubz{% endblock %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KratoSubz</title>
-  <link rel="icon" href="{% static 'images/kratosubz_logo.png' %}" type="image/png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    toggleBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  });
-</script>
-<script src="https://kit.fontawesome.com/87a05770e5.js" crossorigin="anonymous"></script>
-</head>
-
+{% block content %}
 <body class="bg-gray-100 text-gray-900">
 
   <!-- Header & Navigation -->
@@ -235,7 +217,7 @@
     </div>
 
   </div>
-
+  {% endblock %}
   <!-- Bottom Bar -->
   <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
     &copy; <span id="year"></span> KratoSubz. All rights reserved.
