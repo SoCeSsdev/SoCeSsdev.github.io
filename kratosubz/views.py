@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -11,10 +12,15 @@ def index(request):
     
 def register(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        email = request.POST['email']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        full_name = request.POST.get('name')  # Optional: full name field
+
+        if not all([username, email, password1, password2]):
+            messages.error(request, 'Please fill out all fields.')
+            return redirect('register')
 
         if password1 != password2:
             messages.error(request, 'Passwords do not match.')
@@ -29,13 +35,44 @@ def register(request):
             return redirect('register')
 
         user = User.objects.create_user(username=username, email=email, password=password1)
+        user.first_name = full_name or ''  # Store name if provided
         user.save()
+
         messages.success(request, 'Registration successful. You can now log in.')
         return redirect('login')
 
     return render(request, 'kratosubz/register.html')
+
+
 def login(request):
-    return render(request, "kratosubz/login.html")
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, 'Login successful.')
+            return redirect('dashboard')  # Change this to your homepage/dashboard URL name
+        else:
+            messages.error(request, 'Invalid username or password.')
+            return redirect('login')
+
+    return render(request, 'kratosubz/login.html')
+
+def forgot_password(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        if User.objects.filter(email=email).exists():
+            # In real use, send email with reset link
+            messages.success(request, 'If that email is registered, a reset link will be sent.')
+        else:
+            messages.error(request, 'No user found with that email.')
+        return redirect('forgot_password')
+
+    return render(request, 'kratosubz/forgot_password.html')
+
 def blog(request):
     return render(request, "kratosubz/blog.html")
 def about_us(request):
