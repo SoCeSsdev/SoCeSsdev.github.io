@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from .models import Profile 
 
 # Create your views here.
 def index(request):
@@ -12,15 +12,14 @@ def index(request):
     
 def register(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password1 = request.POST.get('password1')
-        password2 = request.POST.get('password2')
-        full_name = request.POST.get('name')  # Optional: full name field
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        phone = request.POST['phone']
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
 
-        if not all([username, email, password1, password2]):
-            messages.error(request, 'Please fill out all fields.')
-            return redirect('register')
 
         if password1 != password2:
             messages.error(request, 'Passwords do not match.')
@@ -34,17 +33,25 @@ def register(request):
             messages.error(request, 'Email already registered.')
             return redirect('register')
 
-        user = User.objects.create_user(username=username, email=email, password=password1)
-        user.first_name = full_name or ''  # Store name if provided
+        # Create user
+        user = User.objects.create_user(username=username, email=email, password=password1, first_name=first_name, last_name=last_name)
         user.save()
 
-        messages.success(request, 'Registration successful. You can now log in.')
-        return redirect('login')
+        # Save phone number (assuming Profile model is linked to User)
+        Profile.objects.create(user=user, phone=phone)
+
+        # Log the user in automatically
+        auth_login(request, user)
+
+        messages.success(request, 'Registration successful. Welcome!')
+        return redirect('dashboard')
 
     return render(request, 'kratosubz/register.html')
 
 
 def login(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -62,6 +69,8 @@ def login(request):
     return render(request, 'kratosubz/login.html')
 
 def forgot_password(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
     if request.method == 'POST':
         email = request.POST['email']
         if User.objects.filter(email=email).exists():
