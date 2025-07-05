@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,12 +10,26 @@
   <script src="https://kit.fontawesome.com/87a05770e5.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 min-h-screen font-sans">
-  <div class="flex min-h-screen">
-    <!-- Sidebar -->
+<body class="bg-gray-100 min-h-screen font-sans relative">
+
+  <!-- WhatsApp Modal -->
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-6 rounded-xl shadow-xl text-center max-w-sm">
+      <h2 class="text-xl font-semibold mb-3 text-blue-600">Join Our WhatsApp Channel</h2>
+      <p class="text-sm text-gray-600 mb-4">Get updates, giveaways, and tips directly from the KratoSubz team.</p>
+      <a href="https://whatsapp.com/channel/0029Vb1JXRB3AzNbH5wpLJ0t" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Join Now</a>
+      <button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-4 text-sm text-gray-500 hover:underline">Close</button>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- Sidebar (Desktop Only) -->
     <aside class="w-64 bg-white shadow-lg hidden md:block">
       <div class="p-6 text-center border-b">
-        <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz Logo" class="w-24 mx-auto mb-2">
+        <a href="{% url 'index' %}">
+          <img src="{% static 'images/kratosubz_logo.png' %}" alt="KratoSubz Logo" class="w-24 mx-auto mb-2">
+        </a>
         <h2 class="text-xl font-bold text-blue-600">KratoSubz</h2>
       </div>
       <nav class="p-4 space-y-4 text-sm text-gray-700">
@@ -39,7 +52,7 @@
     <main class="flex-1">
       <!-- Header -->
       <header class="bg-white p-4 shadow flex items-center justify-between">
-        <h1 class="text-xl font-semibold text-gray-800">Welcome, <span class="text-blue-600">John Doe</span></h1>
+        <h1 class="text-xl font-semibold text-gray-800">Hello, <span class="text-blue-600">{{ request.user.username }}</span></h1>
         <div class="flex items-center space-x-4">
           <span class="text-sm text-gray-600">Balance: <strong class="text-green-600">₦5,000.00</strong></span>
           <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Fund Wallet</button>
@@ -47,78 +60,100 @@
       </header>
 
       <!-- Dashboard Widgets -->
-      <section class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Example widget -->
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-phone text-2xl text-blue-600 mb-2"></i>
-          <h2 class="text-lg font-semibold">Airtime Top-Up</h2>
-          <p class="text-gray-600 text-sm">Recharge any mobile network in seconds.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-wifi text-2xl text-green-600 mb-2"></i>
-          <h2 class="text-lg font-semibold">Buy Data</h2>
-          <p class="text-gray-600 text-sm">Affordable data bundles for all networks.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-tv text-2xl text-purple-600 mb-2"></i>
-          <h2 class="text-lg font-semibold">Cable TV</h2>
-          <p class="text-gray-600 text-sm">Renew DSTV, GOTV, and Startimes subscriptions.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-bolt text-2xl text-yellow-500 mb-2"></i>
-          <h2 class="text-lg font-semibold">Electricity</h2>
-          <p class="text-gray-600 text-sm">Pay bills for all major electricity providers.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-money-bill-wave text-2xl text-indigo-600 mb-2"></i>
-          <h2 class="text-lg font-semibold">Airtime to Cash</h2>
-          <p class="text-gray-600 text-sm">Convert airtime to wallet balance or bank account.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow text-center">
-          <i class="fa-solid fa-code text-2xl text-red-600 mb-2"></i>
-          <h2 class="text-lg font-semibold">API Integration</h2>
-          <p class="text-gray-600 text-sm">VTU resellers can integrate our powerful API.</p>
+      <section class="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-phone text-blue-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Airtime</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-wifi text-green-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Data</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-tv text-purple-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Cable TV</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-bolt text-yellow-500 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Electricity</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-money-bill-wave text-indigo-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Airtime to Cash</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-credit-card text-gray-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Exam PINs</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-code text-red-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">API Access</h2>
+        </a>
+        <a href="#" class="bg-white p-4 rounded shadow text-center hover:bg-blue-50 transition">
+          <i class="fa-solid fa-wallet text-pink-600 text-2xl mb-2"></i>
+          <h2 class="font-semibold text-sm">Wallet</h2>
+        </a>
+      </section>
+
+      <!-- Wallet Account Info -->
+      <section class="px-6 pb-6">
+        <div class="bg-white rounded shadow p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">Your Dedicated Account Number</h2>
+            <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Verify Identity</button>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">
+            To keep this account active, you must verify your identity using your BVN or NIN.
+          </p>
+          <div class="text-lg text-blue-600 font-bold">Account Number: 1234567890 (Wema Bank)</div>
         </div>
       </section>
 
       <!-- Transactions -->
-      <section class="p-6">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Transactions</h2>
-        <div class="overflow-x-auto bg-white rounded shadow">
-          <table class="min-w-full text-sm text-left">
-            <thead class="bg-gray-100">
-              <tr>
-                <th class="p-3">Date</th>
-                <th class="p-3">Service</th>
-                <th class="p-3">Amount</th>
-                <th class="p-3">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-t">
-                <td class="p-3">June 30, 2025</td>
-                <td class="p-3">Airtime Top-Up</td>
-                <td class="p-3">₦500.00</td>
-                <td class="p-3 text-green-600">Successful</td>
-              </tr>
-              <tr class="border-t">
-                <td class="p-3">June 29, 2025</td>
-                <td class="p-3">Data Bundle</td>
-                <td class="p-3">₦1,000.00</td>
-                <td class="p-3 text-green-600">Successful</td>
-              </tr>
-              <tr class="border-t">
-                <td class="p-3">June 28, 2025</td>
-                <td class="p-3">Electricity</td>
-                <td class="p-3">₦3,000.00</td>
-                <td class="p-3 text-yellow-600">Pending</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+    <section class="px-6 pb-12">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Transactions</h2>
+      <div class="overflow-x-auto bg-white rounded shadow">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="p-3">Date</th>
+              <th class="p-3">Service</th>
+              <th class="p-3">Amount</th>
+              <th class="p-3">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tx in transactions|slice:":5" %}
+            <tr class="border-t">
+              <td class="p-3">{{ tx.date }}</td>
+              <td class="p-3">{{ tx.service }}</td>
+              <td class="p-3">₦{{ tx.amount }}</td>
+              <td class="p-3 text-green-600">{{ tx.status }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="4" class="p-4 text-center text-gray-500">No transactions yet.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-4 text-right">
+        <a href="{% url 'login' %}" class="text-blue-600 text-sm hover:underline">See all transactions &rarr;</a>
+      </div>
+    </section>
+
     </main>
   </div>
-</body>
 
+  <script>
+    // Show popup on load
+    window.addEventListener('load', function () {
+      document.getElementById('popup').classList.remove('hidden');
+    });
+  </script>
+
+</body>
 </html>
+
+
